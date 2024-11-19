@@ -2,7 +2,7 @@
 ADD_LIBRARY( Torque_Position_UDP_Simulink SHARED Torque_Position_UDP_Simulink.cpp
 )
 
-
+target_compile_features(Torque_Position_UDP_Simulink PRIVATE cxx_std_17)
 TARGET_LINK_LIBRARIES(Torque_Position_UDP_Simulink
 	XMLInterpreter
 	xmlInput
@@ -18,6 +18,7 @@ TARGET_LINK_LIBRARIES(Torque_Position_UDP_Simulink
 ADD_EXECUTABLE(testUDPPlugin testUDPPlugin.cpp
 )
 
+target_compile_features(testUDPPlugin PRIVATE cxx_std_17)
 TARGET_LINK_LIBRARIES(testUDPPlugin
 	Torque_Position_UDP_Simulink
 )

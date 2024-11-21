@@ -56,17 +56,22 @@ class __declspec(dllexport) TorqueAndPositionUDPSimulink : public AngleAndComsum
 		}
 
 
-		virtual void setMuscleForcePassive(const std::vector<double>& muscleForcePassive)
+		void setMuscleForcePassive(const std::vector<double>& muscleForcePassive)
 		{
 
 		}
 
-		virtual void setMuscleForceActive(const std::vector<double>& muscleForceActive)
+		void setMuscleForceActive(const std::vector<double>& muscleForceActive)
 		{
 
 		}
 
-		virtual void setMuscleTendonStrain(const std::vector<double>& tendonStrain)
+		void setMuscleTendonStrain(const std::vector<double>& tendonStrain)
+		{
+
+		}
+
+		void setTendonStrain (const std::vector<double>& tendonStrain)
 		{
 
 		}

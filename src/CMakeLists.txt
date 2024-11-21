@@ -2,10 +2,10 @@
 ADD_LIBRARY( Torque_Position_UDP_Simulink SHARED Torque_Position_UDP_Simulink.cpp
 )
 
-
+target_compile_features(Torque_Position_UDP_Simulink PRIVATE cxx_std_17)
 TARGET_LINK_LIBRARIES(Torque_Position_UDP_Simulink
-	XMLInterpreter
-	xmlInput
+	XMLIKIDInterpreter
+	XMLExecutionInterpreter
 	FileIO
 	${Boost_LIBRARIES}
 	XercesC::XercesC
@@ -13,11 +13,16 @@ TARGET_LINK_LIBRARIES(Torque_Position_UDP_Simulink
 	ws2_32
 )
 
-
+target_include_directories(Torque_Position_UDP_Simulink PUBLIC
+	${CMAKE_CURRENT_SOURCE_DIR}/../include
+	)
+	
+target_compile_features(Torque_Position_UDP_Simulink PRIVATE cxx_std_17)
 
 ADD_EXECUTABLE(testUDPPlugin testUDPPlugin.cpp
 )
 
+target_compile_features(testUDPPlugin PRIVATE cxx_std_17)
 TARGET_LINK_LIBRARIES(testUDPPlugin
 	Torque_Position_UDP_Simulink
 )
